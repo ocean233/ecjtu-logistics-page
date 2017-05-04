@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>华东交通大学后勤保障处</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="javascript/jQuery v1.7.2 jquery.com.js" type="text/javascript"></script>
+  <script src="javascript/shijian.js" type="text/javascript"></script>
+  <script src="javascript/common.js" type="text/javascript"></script>
+  <script src="javascript/classbase.js" type="text/javascript"></script>
+  <script src="javascript/jquery.slideBox.min.js" type="text/javascript"></script>
+  <script src="javascript/windowopener.js" type="text/javascript"></script>
+  <script src="javascript/navmenu.js" type="text/javascript"></script>
+  <script src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js" type="text/javascript"></script>
+ <script>
+$(function(){
+  var ul = $(".lxfscroll ul");
+  var li = $(".lxfscroll li");
+  var tli = $(".lxfscroll-title li"); 
+  var speed = 350;
+  var autospeed = 3000; 
+  var i=1;
+  var index = 0;
+  var n = 0;
+    /* 标题按钮事件 */
+  function lxfscroll() {
+        var index = tli.index($(this));         
+        tli.removeClass("cur");
+        $(this).addClass("cur");
+        
+        ul.css({"left":"0px"}); 
+        li.css({"left":"0px"}); 
+        li.eq(index).css({"z-index":i});  
+        li.eq(index).css({"left":"400px"}); 
+        ul.animate({left:"-400px"},speed);  
+        i++;  
+      
+    };
+  /* 自动轮换 */
+  function autoroll() {
+          if(n >= 4) {
+            n = 0;
+          }
+          tli.removeClass("cur");
+        tli.eq(n).addClass("cur");
+          ul.css({"left":"0px"}); 
+        li.css({"left":"0px"}); 
+        li.eq(n).css({"z-index":i});  
+        li.eq(n).css({"left":"400px"}); 
+          
+          n++;
+          i++;
+          timer = setTimeout(autoroll, autospeed);
+          ul.animate({left:"-400px"},speed);
+        };
+  /* 鼠标悬停即停止自动轮换 */
+        function stoproll() {
+          li.hover(function() {
+            clearTimeout(timer);
+            n = $(this).prevAll().length+1;
+          }, function() {
+            timer = setTimeout(autoroll, autospeed);
+          });
+          tli.hover(function() {
+            clearTimeout(timer);
+            n = $(this).prevAll().length+1;
+          }, function() {
+            timer = setTimeout(autoroll, autospeed);
+          });
+        };      
+  tli.mouseenter(lxfscroll);
+  autoroll();
+  stoproll();
+});
+</script>
+<script language="javascript">
+function tabs(n)
+{
+var len = 3;
+for (var i = 1; i <= len; i++)
+{
+document.getElementById('tab_a' + i).style.display = (i == n) ? 'block' : 'none';
+document.getElementById('tab_' + i).className = (i == n) ? 'aaa' : 'none';
+}
+}
+function othertabs(n)
+{
+var len = 4;
+for (var i = 1; i <= len; i++)
+{
+document.getElementById('othertab_a' + i).style.display = (i == n) ? 'block' : 'none';
+document.getElementById('othertab_' + i).className = (i == n) ? 'aaa' : 'none';
+}
+}
+</script>
+
+</head>
+<body>
+<div class="wrap">
+	<div class="header">
+    <div class="banner">
+    	<img src="images/banner.png" />
+    </div><!--banner结束-->
+    <div class="nav">
+      <ul id="navmenu">
+        <li><a href="http://www.ecjtu.jx.cn/">交大首页</a></li>
+         <li><a href="#">后勤首页</a></li>
+        <li><a href="">后勤概况</a>
+          <ul>
+            <li><a href="">后勤简介</a></li>
+            <li><a href="">机构设置</a>
+              <ul>
+                <li class="jigou"><a href="">办公室</a></li>
+                <li class="jigou"><a href="">餐饮管理中心</a></li>
+                <li class="jigou"><a href="">宿舍管理中心</a></li>
+                <li class="jigou"><a href="">水电服务中心</a></li>
+                <li class="jigou"><a href="">物业管理中心</a></li>
+                <li class="jigou"><a href="">校园管理中心</a></li>
+                <li class="jigou"><a href="">维修服务中心</a></li>
+                <li class="jigou"><a href="">节能办公室</a></li>
+              </ul>
+            </li>
+            <li><a href="">现任领导</a></li>
+            <li><a href="">荣誉奖项</a></li>
+          </ul>
+        </li>
+        <li><a href="">新闻中心</a>
+          <ul>
+            <li><a href="">综合要闻</a></li>
+                  <li><a href="">部门动态</a></li>
+                  <li><a href="">媒体报道</a></li>
+                  <li><a href="">职工文化</a></li>
+                  <li><a href="">党务动态</a></li>
+          </ul>
+        </li>
+        <li><a href="">制度建设</a>
+          <ul>
+            <li class="jianshe"><a href="">后勤保障处制度与职责</a></li>
+            <li class="jianshe"><a href="">办公室制度与职责</a></li>
+            <li class="jianshe"><a href="">餐饮中心制度与职责</a></li>
+            <li class="jianshe"><a href="">宿管中心制度与职责</a></li>
+            <li class="jianshe"><a href="">水电中心制度与职责</a></li>
+            <li class="jianshe"><a href="">物业中心制度与职责</a></li>
+            <li class="jianshe"><a href="">校园中心制度与职责</a></li>
+            <li class="jianshe"><a href="">维修中心制度与职责</a></li>
+            <li class="jianshe"><a href="">节能办公室制度与职责</a></li>
+          </ul>
+        </li>
+        <li><a href="">通知公告</a></li>
+        <li><a href="">党建工作</a>
+          <ul>
+            <li class="gongzuo"><a href="">党务工作职责</a></li>
+            <li class="gongzuo"><a href="">党务规章制度</a></li>
+            <li class="gongzuo"><a href="">后勤综合治理</a></li>
+            <li class="gongzuo"><a href="">党务专题活动</a></li>
+          </ul>
+        </li>
+        <li><a href="">常用下载</a></li>
+      </ul>
+    </div>
+    <div class="tip">
+      <marquee scrollamount="3" behavior="alternate" onmouseover=this.stop(); onmouseout=this.start(); >
+      <script language="javascript">RunGLNL();</script>
+      </marquee>
+    </div><!--tip结束-->
+  </div><!--header结束-->
+  <div class="main">
+  	<div class="main_top">
+      <div class="news_center">
+      	<div class="news_center_title1">
+        <div class="news_center_title2">&nbsp;&nbsp;&nbsp;新闻中心 </div>
+        <div class="tab">
+          <div class="tab_a">
+        	<ul class="menu" id="menutitle">
+          	<li id="tab_1"class="aaa"><a href="javascript:void(0)" onmouseover="tabs('1')">综合要闻</a></li>
+            <li id="tab_2"><a href="javascript:void(0)" onmouseover="tabs('2')">部门动态</a></li>
+            <li id="tab_3"><a href="javascript:void(0)" onmouseover="tabs('3')">媒体报道</a></li>
+          </ul>
+          <a href="#" class="more">更多>></a>
+          </div>
+          <div class="tab_b" id="tab_a1" style="display:block;">
+           <ul>
+             <li><span class="data"><img src="images/news.jpg" />12.15</span><a href="#">“文明、平安、和睦”第九届寝室文化大赛圆满...</a></li>
+             <li><span class="data"><img src="images/news.jpg" />12.07</span><a href="#">为师生排“危” 消防队清除马蜂窝</a></li>
+             <li><span class="data">11.25</span><a href="#">副校长范勇到后勤进行工作调研</a></li>
+             <li><span class="data">11.12</span><a href="#">陈进走访南昌市食品药品监督管理局</a></li>
+             <li><span class="data">11.12</span><a href="#">西北大学后勤集团一行来校调研</a></li>
+             <li><span class="data">9.17</span><a href="#">后勤处召开维修中心分管工作交接会</a></li>
+             <li><span class="data">9.16</span><a href="#">后勤处班子落实三级巡查责任、狠抓后勤精细...</a></li>
+             <li><span class="data">7.06</span><a href="#">关于做好后勤保障处2015年暑假工作安排的通...</a></li>
+           </ul>
+          </div>
+          <div class="tab_b" id="tab_a2" style="display:none;">
+            <ul>
+              <li><span class="data"><img src="images/news.jpg" />12.07</span><a href="#">为师生排“危” 消防队清除马蜂窝</a></li>
+              <li><span class="data">6.25</span><a href="#">学生宿舍管理中心全力以赴做好新生住宿分配...</a></li>
+              <li><span class="data">6.08</span><a href="#">后勤保障处物业、宿舍管理中心开展消防演练</a></li>
+              <li><span class="data">4.23</span><a href="#">我校荣获“全国第一批节约型公共机构示范单...</a></li>
+              <li><span class="data">11.26</span><a href="#">亲情奉献、服务育人----宿管中心工作人员亲...</a></li>
+              <li><span class="data">9.28</span><a href="#">宿管、学生会联合开展用电安全、消防安全的...</a></li>
+              <li><span class="data">7.09</span><a href="#">物业管理中心认真做好暑假安全工作</a></li>
+              <li><span class="data">5.06</span><a href="#">第二届校园宿舍节水爱水大赛圆满落幕</a></li>
+            </ul>
+          </div>
+          <div class="tab_b" id="tab_a3" style="display:none;">
+            <ul>
+              <li><span class="data"><img src="images/news.jpg" />5.23</span><a href="#">【交大要闻】省教育厅公共机构节能考核组来...</a></li>
+              <li><span class="data">5.11</span><a href="#">【交大要闻】南昌市“全国城市节水宣传周”...</a></li>
+              <li><span class="data">6.16</span><a href="#">【交大要闻】雷晓燕到后勤保障处调研</a></li>
+              <li><span class="data">6.16</span><a href="#">【交大要闻】南华大学副校长一行到我校调研</a></li>
+              <li><span class="data">6.16</span><a href="#">【交大要闻】万明到学生宿舍进行调研</a></li>
+              <li><span class="data">6.11</span><a href="#">【交大要闻】我校举办电工技能竞赛</a></li>
+              <li><span class="data">6.09</span><a href="#">【交大要闻】"携手节能低碳，共建碧水蓝天"...</a></li>
+              <li><span class="data">6.05</span><a href="#">【交大要闻】汪立夏一行到后勤保障处调研</a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+        <div class="news_center_list">
+         <div class="lxfscroll">
+            <ul>
+              <li><img src="images/news_center_1.jpg" width="250" height="180" /></li>
+              <li><img src="images/news_center_2.jpg" width="250" height="180" /></li>
+              <li><img src="images/news_center_3.jpg" width="250" height="180" /></li>
+              <li><img src="images/news_center_4.jpg" width="250" height="180" /></li>
+            </ul>
+          </div>
+          <div class="lxfscroll-title">
+            <ul>
+              <li class="cur">1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+            </ul>
+          </div><!--自动切换图片-->
+        </div>
+      </div><!--新闻中心结束-->
+      <div class="call_board">
+      	<div class="call_board_title">
+        <img src="images/call_board.jpg" />通知公告
+        </div>
+        <div class="call_board_list">
+          <ul>
+             <li><span class="data"><img src="images/news.jpg" />4.23</span><a href="#">关于全校停水的通知</a></li>
+             <li><span class="data">4.05</span><a href="#">关于规范张贴节能标识的温馨提示</a></li>
+             <li><span class="data">3.06</span><a href="#">后勤保障处新网站试运行公告</a></li>
+           </ul>
+        </div>
+      </div>
+    </div><!--main_top结束-->
+    <div class="main_center">
+    	<div class="server_title">服务大厅</div>
+      <div class="server_pic"><img src="images/server_center1.jpg" /></div>
+      <ul>
+        <li class="service_item"><a href="http://hqbx.ecjtu.jx.cn/"><img src="images/server_center2.jpg"/>
+          <p>在线报修</p>
+          </a></li>
+        <li class="service_item"><a href="#"><img src="images/server_center3.jpg"/>
+          <p>餐饮信息</p>
+        </a></li>
+        <li class="service_item"><a href="#"><img src="images/server_center4.jpg"/>
+          <p>问题解答</p>
+          </a></li>
+        <li class="service_item"><a href="http://bbs.ecjtu.net/forum-78-1.html"><img src="images/server_center5.jpg"/>
+          <p>失物招领</p>
+          </a></li>
+        <li class="service_item"><a href="#"><img src="images/server_center6.jpg"/>
+          <p>后勤微博</p>
+          </a></li>
+        <li class="service_item"><a href="#"><img src="images/server_center7.jpg"/>
+          <p>办事流程</p>
+          </a></li>
+          <li class="service_item"><a href="#"><img src="images/server_center8.jpg"/>
+          <p>校园绿化</p>
+          </a></li>
+        <li class="service_item"><a href="http://202.101.208.111/wequery/Login.jsp"><img src="images/server_center9.jpg"/>
+          <p style="font-size:12px; line-height:23px; margin-left:-7px;">住宅水电费查询</p>
+          </a></li>
+      </ul>
+    </div><!--main_center结束-->
+    	<div class="server_guide">
+      	<div class="server_guide_title">
+        	<img src="images/guide_icon.gif" />服务指南
+        </div>
+        <div class="guide_content1">
+        	<div class="guide_list"><img src="images/e1.gif" /><a href="#">餐饮指南</a></div>
+          <div class="guide_list"><img src="images/e4.gif" /><a href="#">物业指南</a></div>
+          <div class="guide_list"><img src="images/e5.gif" /><a href="#">水电指南</a></div>
+          <div class="guide_list"><img src="images/e7.gif" /><a href="#">节约校园</a></div>
+          <div class="guide_list"><img src="images/e9.gif" /><a href="#">出行服务</a></div>
+        </div>
+        <div class="guide_content2">
+        	<div class="guide_list"><img src="images/e2.gif" /><a href="#">宿管指南</a></div>
+          <div class="guide_list"><img src="images/e3.gif" /><a href="#">维修指南</a></div>
+          <div class="guide_list"><img src="images/e6.gif" /><a href="#">校园绿化</a></div>
+          <div class="guide_list"><img src="images/e8.gif" /><a href="#">校园地图</a></div>
+          <div class="guide_list"><img src="images/e10.gif" /><a href="#">实用百科</a></div>
+        </div>
+      </div><!--服务指南结束-->
+
+        <div class="othertab">
+          <div class="othertab_a">
+            <ul class="othermenu" id="othermenutitle">
+            <li id="othertab_1" class="aaa"><a href="javascript:void(0)" onmouseover="othertabs('1');" >职工文化</a></li>
+            <li id="othertab_2" ><a href="javascript:void(0)" onmouseover="othertabs('2');" >党务动态</a></li>
+            </ul>
+            <a href="#" class="more">更多>></a>
+          </div>
+          <div class="othertab_b" id="othertab_a1" style="display:block;">
+            <ul>
+              <li><span class="data"><img src="images/news.jpg" />6.23</span><a href="#">纪念抗日战争胜利70周年 ——后勤第三...</a></li>
+              <li><span class="data">6.08</span><a href="#">后勤保障处物业、宿舍管理中心开展消...</a></li>
+              <li><span class="data">11.21</span><a href="#">后勤保障处第三党支部开展“党员义务...</a></li>
+              <li><span class="data">3.09</span><a href="#">后勤工会举办女职工跳绳比赛庆祝“三...</a></li>
+            </ul>
+          </div>
+          <div class="othertab_b" id="othertab_a2" style="display:none;">
+            <ul>
+              <li><span class="data"><img src="images/news.jpg" />6.23</span><a href="#">纪念抗日战争胜利70周年 ——后勤第三...</a></li>
+              <li><span class="data">6.08</span><a href="#">后勤保障处物业、宿舍管理中心开展消...</a></li>
+              <li><span class="data">5.22</span><a href="#">后勤保障处召开落实党风廉政建设责任...</a></li>
+              <li><span class="data">11.21</span><a href="#">后勤保障处第三党支部开展“党员义务...</a></li>
+              <li><span class="data">11.05</span><a href="#">后勤第三党支部开展亲情服务月动员大...</a></li>
+              <li><span class="data">5.06</span><a href="#">后勤保障处召开社会管理综合治理、维...</a></li>
+            </ul>
+          </div>
+        </div>
+      <!--others结束-->
+      <div class="tools" onfocus="MM_showHideLayers('link_box','','show','list_btn','','hide')">
+      	<a href="#"><div class="tools_tel_1">服务电话查询</div></a>
+        <a href="#"><div class="tools_tel_2">投诉电话查询</div></a>
+        <a href="http://mail.ecjtu.jx.cn/">
+        	<div class="tools_email_11">
+          	<img src="images/tools_email.jpg" />&nbsp;&nbsp;处长信箱
+            <div class="tools_email_12">xyc@ecjtu.jx.cn</div>
+          </div>
+        </a>
+        <a href="http://mail.ecjtu.jx.cn/">
+        	<div class="tools_email_21">
+        		<img src="images/tools_email.jpg" />&nbsp;&nbsp;书记信箱
+            <div class="tools_email_22">chengzx@ecjtu,jx.cn</div>
+        	</div>
+        </a>
+        <div class="dropDown">
+        	<div id="link_box">&lt;- - - 友情链接- - - -&gt;</div>
+        	<div id="list_btn"></div>
+        <ul class="dropList">
+          <li><a href="http://www.ncu.edu.cn/">南昌大学</a></li>
+          <li><a href="http://www.jxufe.edu.cn/">江西财经大学</a></li>
+          <li><a href="http://www.jxau.edu.cn/">江西农业大学</a></li>
+          <li><a href="http://www.nchu.edu.cn/">南昌航空航天大学</a></li>
+          <li><a href="http://www.jxnu.edu.cn/">江西师范大学</a></li>
+        </ul>
+      </div>
+      </div><!--tools结束-->	
+      <div class="fengcai">
+      	<div class="fengcai_title">&nbsp;&nbsp;&nbsp;后勤风采</div>
+        
+          <div id="demo">
+            <div id="indemo">
+              <div id="demo1">
+              <a href="#"><img src="images/houqing_1.jpg" border="0" /></a>
+              <a href="#"><img src="images/houqing_2.jpg" border="0" /></a>
+              <a href="#"><img src="images/houqing_3.jpg" border="0" /></a>
+              <a href="#"><img src="images/houqing_4.jpg" border="0" /></a>
+              <a href="#"><img src="images/houqing_5.jpg" border="0" /></a>
+              <a href="#"><img src="images/houqing_6.jpg" border="0" /></a>
+              </div>
+              <div id="demo2"></div>
+            </div>
+          </div>
+          <script>
+            var speed=10;
+            var tab=document.getElementById("demo");
+            var tab1=document.getElementById("demo1");
+            var tab2=document.getElementById("demo2");
+            tab2.innerHTML=tab1.innerHTML;
+            function Marquee(){
+            if(tab2.offsetWidth-tab.scrollLeft<=0)
+            tab.scrollLeft-=tab1.offsetWidth
+            else{
+            tab.scrollLeft++;
+            }
+            }
+            var MyMar=setInterval(Marquee,speed);
+            tab.onmouseover=function() {clearInterval(MyMar)};
+            tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+          </script>
+      </div>
+  </div><!--main结束-->
+  <div class="footer">
+  <p class="footer_1">华东交通大学后勤保障处版权所有&nbsp;&nbsp;&copy;copyright&nbsp;2013&nbsp;&nbsp; 地址：江西省南昌市经济技术开发区双港东大街808号&nbsp;&nbsp;邮编：330013&nbsp;&nbsp;</p>
+  <p class="footer_2">技术支持：计算机紧急响应组&nbsp;&nbsp;访问统计：</p>
+  </div><!--footer结束-->
+</div><!--wrap结束-->
+</body>
+</html>
